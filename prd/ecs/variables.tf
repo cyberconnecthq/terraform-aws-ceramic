@@ -6,6 +6,12 @@ variable "aws_region" {
   default = "us-west-2"
 }
 
+variable "acm_certificate_arn" {
+  type        = string
+  description = "ARN of ACM SSL certificate"
+  default = "arn:aws:acm:us-west-2:996435522985:certificate/f1cb9336-5a7c-4244-9731-281f6ad76da5"
+}
+
 variable "cohort" {
   type        = number
   description = "Cohort number used for namespacing"
@@ -60,6 +66,18 @@ variable "image_tag" {
   default = "latest"
 }
 
+variable "private_subnet_ids" {
+  type        = list(string)
+  description = "List of private subnet ids for the VPC"
+  default = ["subnet-05c9b56287f535c68", "subnet-09751987b7df528b9"]
+}
+
+variable "public_subnet_ids" {
+  type        = list(string)
+  description = "List of ALB subnet ids"
+  default = ["subnet-00565b0cbdc9d5510", "subnet-07dc0efd3e4f13ca2"]
+}
+
 variable "s3_bucket_name" {
   type        = string
   description = "Name of S3 bucket to use as a backend for Ceramic and IPFS"
@@ -102,6 +120,12 @@ variable "ceramic_env" {
   type        = string
   description = "Optional. Environment namespace for Ceramic"
   default     = "prod"
+}
+
+variable "ceramic_eth_rpc_url" {
+  type        = string
+  description = "Ethereum RPC URL. Must match anchor service ETH network"
+  default = "https://mainnet.infura.io/v3/3914adb8f2b447a59b87715957581b1a"
 }
 
 variable "ceramic_efs_logs_fs_id" {
