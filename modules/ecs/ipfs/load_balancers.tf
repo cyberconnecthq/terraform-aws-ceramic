@@ -9,11 +9,11 @@ resource "aws_lb" "external" {
   idle_timeout    = 3600
   internal        = false
 
-  access_logs {
-    bucket  = module.s3_alb.this_s3_bucket_id
-    prefix  = "external"
-    enabled = var.enable_alb_logging
-  }
+  # access_logs {
+  #   bucket  = module.s3_alb.this_s3_bucket_id
+  #   prefix  = "external"
+  #   enabled = var.enable_alb_logging
+  # }
 
   tags = local.default_tags
 }

@@ -15,7 +15,7 @@ variable "acm_certificate_arn" {
 variable "cohort" {
   type        = number
   description = "Cohort number used for namespacing"
-  default =  1
+  default =  2
 }
 
 variable "default_tags" {

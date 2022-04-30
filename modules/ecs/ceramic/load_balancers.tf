@@ -11,9 +11,9 @@ module "alb" {
   security_groups = [module.load_balancer_security_group.security_group_id]
   idle_timeout    = 3600
 
-  access_logs = {
-    bucket = module.s3_alb.this_s3_bucket_id
-  }
+  # access_logs = {
+  #   bucket = module.s3_alb.this_s3_bucket_id
+  # }
 
   target_groups = [
     {
