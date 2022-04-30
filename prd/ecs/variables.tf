@@ -57,7 +57,7 @@ variable "eth_network" {
 variable "env" {
   type        = string
   description = "Environment name"
-  default = "prd"
+  default = "prod"
 }
 
 variable "image_tag" {

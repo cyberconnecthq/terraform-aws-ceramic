@@ -52,7 +52,7 @@ module "ceramic_ecs" {
  */
 
 data "aws_acm_certificate" "_3boxlabs_com" {
-  domain      = "*.${var.domain_name}"
+  domain      = var.domain_name
   most_recent = true
 }
 
